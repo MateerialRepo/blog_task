@@ -1,0 +1,28 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Django Blog</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Sans+Pro:400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+  </head>
+  <body>
+    <header>
+        <div class="nav-left">
+            <h1><a href="{% url 'home' %}">Django Blog</a></h1>
+        </div>
+        <div class="nav-right">
+            <h1><a href="{% url 'post_new' %}">New Blog Post</a></h1>
+        </div>
+    </header>
+    
+    <div>
+        {% block content %}
+        {% endblock %}
+    <div>
+    
+  </body>
+</html>
