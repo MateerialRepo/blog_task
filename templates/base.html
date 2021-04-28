@@ -6,8 +6,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Sans+Pro:400" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Sans+Pro:400" rel="stylesheet" >
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" >
   </head>
   <body>
     <header>
@@ -18,11 +18,18 @@
             <h1><a href="{% url 'post_new' %}">New Blog Post</a></h1>
         </div>
     </header>
-    
+
     <div>
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Log Out</a></p>
+        {% else %}
+            <p>You are not logged in at the moment.</p>
+            <p>You can login here <a href="{% url 'login' %}">Log In</a></p>
+        {% endif %}
         {% block content %}
         {% endblock %}
     <div>
-    
+
   </body>
 </html>
