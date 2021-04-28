@@ -8,7 +8,7 @@ from .models import Post
 
 
 # Create your views here.
-class BlogListView(LoginRequiredMixin, ListView):
+class BlogListView(ListView):
     model = Post
     template_name = 'home.html'
 
@@ -18,7 +18,7 @@ class BlogDetailView(LoginRequiredMixin, DetailView):
     template_name = 'post_detail.html'
 
 
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'post_new.html'
     fields = ['title', 'body']

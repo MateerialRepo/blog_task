@@ -26,6 +26,7 @@
         {% else %}
             <p>You are not logged in at the moment.</p>
             <p>You can login here <a href="{% url 'login' %}">Log In</a></p>
+            <p>You can register here <a href="{% url 'signup' %}">Register</a></p>
         {% endif %}
         {% block content %}
         {% endblock %}
