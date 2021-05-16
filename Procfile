@@ -1,1 +1,1 @@
-web: gunicorn blog_task.wsgi
+web: gunicorn config.wsgi
