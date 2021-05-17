@@ -44,6 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+
+    # 3rd party app to help with forms
+    'crispy_forms',
+
+    # local dev apps
     'blog',
     'accounts',
 ]
@@ -132,6 +137,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [str(BASE_DIR.joinpath('static'))]
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# config/settings.py
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# config/settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

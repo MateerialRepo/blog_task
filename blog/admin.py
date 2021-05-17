@@ -7,7 +7,9 @@ class CommentInline(admin.TabularInline):
 
 
 class PostAdmin(admin.ModelAdmin):
-    inlines = [CommentInline, ]
+    inlines = [
+        CommentInline,
+    ]
 
 
 # Register your models here.
